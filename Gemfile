@@ -79,3 +79,4 @@ gem 'pry-rails'
 end
 
 gem "devise", "~> 4.9"
+gem "simple_calendar", "~> 2.0"
