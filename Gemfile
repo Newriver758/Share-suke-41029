@@ -69,6 +69,9 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+group :production do
+  gem 'pg'
 end
 
 gem 'pry-rails'
+end
