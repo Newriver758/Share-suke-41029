@@ -1,0 +1,41 @@
+.wrapper {
+  display: flex;
+}
+.side-bar {
+  background-color: #253141;
+  width: 200px;
+  height: 100vh;
+}
+
+.side-bar-header {
+  height: 100px;
+  padding: 0 20px;
+  background-color: #253141;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-name a{
+  font-size: 16px;
+  color: #FAFAFA;
+  text-decoration: none;
+}
+
+.create-operation a {
+  font-size: 10px;
+  border: 1px solid lightblue;
+  padding: 14px;
+  color: deepskyblue;
+  text-decoration: none;
+}
+
+.side-bar-footer {
+  background-color: #2F3E51;
+  height: calc(100vh - 100px);
+}
+
+.calendar {
+  background-color: #FFFFFF;
+  width: calc(100vw - 200px);
+}
