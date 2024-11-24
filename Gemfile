@@ -74,5 +74,6 @@ group :production do
 end
 
 gem 'pry-rails'
-gem 'devise'
 end
+
+gem "devise", "~> 4.9"
