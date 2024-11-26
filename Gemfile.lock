@@ -253,6 +253,8 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    simple_calendar (2.4.3)
+      rails (>= 3.0)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -270,13 +272,9 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
-
     unicode-display_width (3.1.2)
       unicode-emoji (~> 4.0, >= 4.0.4)
     unicode-emoji (4.0.4)
-=======
-    unicode-display_width (2.6.0)
-
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.1)
@@ -321,6 +319,7 @@ DEPENDENCIES
   rspec-rails
   rubocop
   selenium-webdriver
+  simple_calendar (~> 2.0)
   sprockets-rails
   stimulus-rails
   turbo-rails
