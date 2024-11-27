@@ -77,7 +77,7 @@ group :test do
     gem 'pg'
   end
 
-gem 'pry-rails'
-gem "devise", "~> 4.9"
-gem "simple_calendar", "~> 2.0"
+  gem 'devise', '~> 4.9.4'
+  gem 'pry-rails'
+  gem 'simple_calendar', '~> 2.0'
 end
