@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  get 'calendars/index'
+  get 'operations/index'
 
   devise_for :users
-  root to: "calendars#index"
+  root to: "operations#index"
   resources :users, only: [:edit, :update]
+  resources :operations, only: [:index]
 end
