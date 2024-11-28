@@ -1,0 +1,27 @@
+<table border="1" style="border-collapse: collapse; width: 100%;">
+  <thead>
+    <tr>
+      <th style="width: 150px;">ユーザー名</th>
+      <% (@start_date..@end_date).each do |date| %>
+        <th><%= date.strftime('%m/%d (%a)') %></th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <% (@start_date..@end_date).each do |date| %>
+          <% operation = user.operations.find_by(date: date) %>
+          <td>
+            <% if operation %>
+              <%= operation.info %>
+            <% else %>
+              空き
+            <% end %>
+          </td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

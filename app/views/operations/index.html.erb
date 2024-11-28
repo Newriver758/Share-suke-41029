@@ -1,8 +1,5 @@
-<div class="wrapper">
-  <div class="side-bar">
-    <%= render "side_bar" %>
-  </div>
-  <div class="calendar">
-    <%= render "main_operation" %>
-  </div>
-</div>
+<h1>Operations Index</h1>
+
+<% @operations.each do |operation| %>
+  <p><%= operation.operation_info %></p>
+<% end %>

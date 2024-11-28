@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_11_24_140649) do
+ActiveRecord::Schema[7.0].define(version: 2024_11_28_215928) do
+  create_table "operations", charset: "utf8", force: :cascade do |t|
+    t.string "operation_info", null: false
+    t.integer "day_or_night_id", null: false
+    t.integer "work_content_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", default: "", null: false
