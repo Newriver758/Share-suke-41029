@@ -9,7 +9,13 @@ class CreateOperations < ActiveRecord::Migration[7.0]
 
       # 業務内容（アクティブハッシュ用ID）
       t.integer :work_content_id, null: false
-      
+
+      # 日付
+      t.date :date, null: false
+
+      # ユーザーID
+      t.references :user, null: false, foreign_key: true
+
       t.timestamps
     end
   end
