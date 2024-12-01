@@ -15,7 +15,7 @@
           <% operation = user.operations.find_by(date: date) %>
           <td>
             <% if operation %>
-              <%= operation.info %>
+              <%= operation.operation_info %>
             <% else %>
               休み
             <% end %>
