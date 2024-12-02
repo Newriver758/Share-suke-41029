@@ -77,6 +77,7 @@ group :test do
     gem 'pg'
   end
 
+  gem 'active_hash'
   gem 'devise', '~> 4.9.4'
   gem 'pry-rails'
   gem 'simple_calendar', '~> 2.0'

@@ -8,8 +8,30 @@
   <%= link_to "今日", calendars_path(start_date: Date.today.beginning_of_week), class: "btn btn-secondary" %>
   <%= link_to "次の週", calendars_path(start_date: @start_date + 7.days), class: "btn btn-primary" %>
   </div>
-  
+
   <div class="calendar">
     <%= render "main_calendar", start_date: @start_date, end_date: @end_date %>
   </div>
 </div>
+
+<%= form_with model: Operation.new, url: operations_path, local: true do |f| %>
+  <div>
+    <%= f.label :date, "日付" %>
+    <%= f.date_field :date, required: true %>
+  </div>
+  <div>
+    <%= f.label :operation_info, "運行情報" %>
+    <%= f.text_field :operation_info, required: true %>
+  </div>
+  <div>
+    <%= f.label :day_or_night_id, "時間帯" %>
+    <%= f.select :day_or_night_id, options_for_select(DayOrNight.all.map { |d| [d.name, d.id] }), include_blank: true, required: true %>
+  </div>
+  <div>
+    <%= f.label :work_content_id, "業務内容" %>
+    <%= f.select :work_content_id, options_for_select(WorkContent.all.map { |w| [w.name, w.id] }), include_blank: true, required: true %>
+  </div>
+  <div>
+    <%= f.submit "投稿" %>
+  </div>
+<% end %>

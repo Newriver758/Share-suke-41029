@@ -12,12 +12,14 @@
       <tr>
         <td><%= user.name %></td>
         <% (@start_date..@end_date).each do |date| %>
-          <% operation = user.operations.find_by(date: date) %>
           <td>
-            <% if operation %>
-              <%= operation.operation_info %>
+            <% operations = user.operations.where(date: date) %>
+            <% if operations.any? %>
+              <% operations.each do |operation| %>
+                <p><%= operation.operation_info %></p>
+              <% end %>
             <% else %>
-              休み
+              <p>休み</p>
             <% end %>
           </td>
         <% end %>
