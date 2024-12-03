@@ -78,7 +78,7 @@ group :test do
   end
 
   gem 'active_hash'
-  gem 'devise', '~> 4.9.4'
+  gem 'devise', group: :default
   gem 'pry-rails'
   gem 'simple_calendar', '~> 2.0'
 end

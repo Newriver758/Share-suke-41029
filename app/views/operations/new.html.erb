@@ -1,0 +1,37 @@
+<h1>運行情報を投稿</h1>
+
+<%= form_with model: @operation, local: true do |f| %>
+  <div>
+    <%= f.label :user_id, 'ユーザー' %>
+    <%= f.select :user_id, options_for_select(@users.map { |user| [user.name, user.id] }, @user&.id), required: true %>
+  </div>
+
+  <div>
+    <%= f.label :date, "日付" %>
+    <%= f.date_field :date, value: @date || Date.today, required: true %>
+  </div>
+
+  <div>
+    <%= f.label :operation_info, '運行情報' %>
+    <%= f.text_field :operation_info, required: true %>
+  </div>
+
+  <div>
+    <%= f.label :day_or_night_id, '昼/夜' %>
+    <%= f.select :day_or_night_id, options_for_select(DayOrNight.all.map { |d| [d.name, d.id] }) %>
+  </div>
+
+  <div>
+    <%= f.label :work_content_id, '業務内容' %>
+    <%= f.select :work_content_id, options_for_select(WorkContent.all.map { |w| [w.name, w.id] }) %>
+  </div>
+
+  <%= f.hidden_field :user_id, value: @user&.id %>
+  <%= f.hidden_field :date, value: @date %>
+
+  <div>
+    <%= f.submit '投稿' %>
+  </div>
+<% end %>
+
+<%= link_to '戻る', calendars_path %>
