@@ -1,4 +1,6 @@
 class Operation < ApplicationRecord
+  extend ActiveHash::Associations::ActiveRecordExtensions
+
   belongs_to :user
 
   # ActiveHashとの関連付け
