@@ -73,12 +73,13 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'webdrivers'
-  group :production do
-    gem 'pg'
-  end
-
-  gem 'active_hash'
-  gem 'devise', group: :default
-  gem 'pry-rails'
-  gem 'simple_calendar', '~> 2.0'
 end
+
+group :production do
+  gem 'pg'
+end
+
+gem 'active_hash'
+gem 'devise'
+gem 'pry-rails'
+gem 'simple_calendar', '~> 2.0'
