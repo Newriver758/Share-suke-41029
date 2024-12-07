@@ -1,6 +1,6 @@
 class OperationsController < ApplicationController
   def index
-    # 必要に応じてデータを取得
+    # すべての運行情報を取得
     @operations = Operation.all
   end
 

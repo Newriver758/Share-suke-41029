@@ -1,5 +1,18 @@
 <h1>Operations Index</h1>
 
+<table>
+  <thead>
+    <tr>
+      <th>運行情報</th>
+      <th>作成日時</th>
+    </tr>
+  </thead>
+  <tbody>
 <% @operations.each do |operation| %>
-  <p><%= operation.operation_info %></p>
-<% end %>
+  <tr>
+        <td><%= operation.operation_info %></td>
+        <td><%= operation.created_at.strftime('%Y-%m-%d %H:%M:%S') %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
