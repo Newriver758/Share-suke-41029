@@ -1,23 +1,23 @@
-<table border="1" style="border-collapse: collapse; width: 100%;">
+<table>
   <thead>
     <tr>
-      <th style="width: 150px;">ユーザー名</th>
-      <% (@start_date..@end_date).each do |date| %>
+      <th>ユーザー名</th>
+      <% (start_date..end_date).each do |date| %>
         <th><%= date.strftime('%m/%d (%a)') %></th>
       <% end %>
     </tr>
   </thead>
   <tbody>
-    <% @users.each do |user| %>
+    <% User.all.each do |user| %>
       <tr>
         <td><%= user.name %></td>
-        <% (@start_date..@end_date).each do |date| %>
+        <% (start_date..end_date).each do |date| %>
           <td>
-            <% operations = user.operations.where(date: date) %>
-            <% if operations.any? %>
-              <% operations.each do |operation| %>
-                <p><%= operation.operation_info %></p>
-              <% end %>
+            <% operation = @operations.find { |op| op.user_id == user.id && op.date == date } %>
+            <% if operation %>
+              <p><%= operation.operation_info %></p>
+              <p><%= operation.day_or_night.name %></p>
+              <p><%= operation.work_content.name %></p>
             <% else %>
               <p>休み</p>
             <% end %>

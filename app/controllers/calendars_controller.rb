@@ -1,12 +1,12 @@
 class CalendarsController < ApplicationController
   def index
-    # パラメーターから日付を取得、なければ今日の日付をデフォルトに
-    @current_date = params[:start_date] ? Date.parse(params[:start_date]) : Date.today
+    # パラメータから開始日を取得し、デフォルトは今週の月曜日
+    @start_date = params[:start_date] ? Date.parse(params[:start_date]) : Date.today.beginning_of_week
 
-    # 表示する期間を取得（例: 今週の月曜日から日曜日まで）
-    @start_date = Date.today.beginning_of_week  # 週の始まり (月曜日)
-    @end_date = Date.today.end_of_week          # 週の終わり (日曜日)
+    # 開始日から6日後を終了日に設定
+    @end_date = @start_date + 6.days
 
-    @users = User.all # 全ユーザーを取得
+    # 指定された期間内の運行情報を取得
+    @operations = Operation.where(date: @start_date..@end_date)
   end
 end

@@ -1,17 +1,23 @@
-<h1>Operations Index</h1>
+<h1>運行情報一覧</h1>
 
 <table>
   <thead>
     <tr>
+      <th>ユーザー名</th>
+      <th>日付</th>
       <th>運行情報</th>
-      <th>作成日時</th>
+      <th>昼/夜</th>
+      <th>業務内容</th>
     </tr>
   </thead>
   <tbody>
-<% @operations.each do |operation| %>
-  <tr>
+    <% @operations.each do |operation| %>
+      <tr>
+        <td><%= operation.user.name %></td>
+        <td><%= operation.date %></td>
         <td><%= operation.operation_info %></td>
-        <td><%= operation.created_at.strftime('%Y-%m-%d %H:%M:%S') %></td>
+        <td><%= operation.day_or_night.name %></td>
+        <td><%= operation.work_content.name %></td>
       </tr>
     <% end %>
   </tbody>
