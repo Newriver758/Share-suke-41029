@@ -18,3 +18,11 @@
  * {
   box-sizing: border-box;
 }
+
+th.saturday {
+  color: blue;
+}
+
+th.sunday {
+  color: red;
+}

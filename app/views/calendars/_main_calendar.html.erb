@@ -3,7 +3,9 @@
     <tr>
       <th>ユーザー名</th>
       <% (start_date..end_date).each do |date| %>
-        <th><%= date.strftime('%m/%d (%a)') %></th>
+        <th class="<%= 'saturday' if date.saturday? %> <%= 'sunday' if date.sunday? %>">
+          <%= date.strftime('%m/%d (%a)') %>
+        </th>
       <% end %>
     </tr>
   </thead>
