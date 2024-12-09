@@ -15,7 +15,7 @@
           <td>
             <% operation = @operations.find { |op| op.user_id == user.id && op.date == date } %>
             <% if operation %>
-              <p><%= operation.operation_info %></p>
+              <p><%= link_to operation.operation_info, operation_path(operation), class: "text-info" %></p>
               <p><%= operation.day_or_night.name %></p>
               <p><%= operation.work_content.name %></p>
             <% else %>
