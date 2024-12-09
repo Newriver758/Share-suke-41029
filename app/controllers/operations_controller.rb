@@ -6,7 +6,7 @@ class OperationsController < ApplicationController
   def create
     @operation = Operation.new(operation_params)
     if @operation.save
-      redirect_to operations_path, notice: '運行情報を投稿しました。'
+      redirect_to calendars_path(start_date: @operation.date.beginning_of_week), notice: '運行情報が投稿されました。'
     else
       render :new, status: :unprocessable_entity
     end
