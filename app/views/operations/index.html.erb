@@ -15,7 +15,9 @@
       <tr>
         <td><%= operation.user.name %></td>
         <td><%= operation.date %></td>
-        <td><%= operation.operation_info %></td>
+        <td>
+          <%= link_to operation.operation_info, operation_path(operation), class: 'text-primary' %>
+        </td>
         <td><%= operation.day_or_night.name %></td>
         <td><%= operation.work_content.name %></td>
       </tr>

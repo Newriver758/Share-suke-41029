@@ -16,6 +16,10 @@ class OperationsController < ApplicationController
     @operations = Operation.includes(:user).order(:date)
   end
 
+  def show
+    @operation = Operation.find(params[:id])
+  end
+
   private
 
   def operation_params

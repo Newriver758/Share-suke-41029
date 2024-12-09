@@ -1,0 +1,9 @@
+<h1>運行情報の詳細</h1>
+
+<p><strong>ユーザー名:</strong> <%= @operation.user.name %></p>
+<p><strong>日付:</strong> <%= @operation.date %></p>
+<p><strong>運行情報:</strong> <%= @operation.operation_info %></p>
+<p><strong>昼/夜:</strong> <%= @operation.day_or_night.name %></p>
+<p><strong>業務内容:</strong> <%= @operation.work_content.name %></p>
+
+<%= link_to 'カレンダーに戻る', calendars_path(start_date: @operation.date.beginning_of_week), class: 'btn btn-secondary' %>
