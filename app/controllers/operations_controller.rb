@@ -20,6 +20,19 @@ class OperationsController < ApplicationController
     @operation = Operation.find(params[:id])
   end
 
+  def edit
+    @operation = Operation.find(params[:id])
+  end
+
+  def update
+    @operation = Operation.find(params[:id])
+    if @operation.update(operation_params)
+      redirect_to @operation, notice: '運行情報を更新しました。'
+    else
+      render :edit
+    end
+  end
+
   private
 
   def operation_params

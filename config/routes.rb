@@ -4,5 +4,5 @@ Rails.application.routes.draw do
 
   resources :users, only: %i[edit update]
   resources :calendars, only: [:index]
-  resources :operations, only: %i[index new create show]
+  resources :operations
 end
