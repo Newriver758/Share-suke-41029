@@ -12,7 +12,10 @@
   <tbody>
     <% User.all.each do |user| %>
       <tr>
-        <td><%= user.name %></td>
+        <td>
+          <%= user.name %>
+          
+        </td>
         <% (start_date..end_date).each do |date| %>
           <td>
             <% operation = @operations.find { |op| op.user_id == user.id && op.date == date } %>

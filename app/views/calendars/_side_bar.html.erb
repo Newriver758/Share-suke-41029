@@ -1,11 +1,15 @@
 <div class="side-bar-header">
   <div class="header-name">
     <%= link_to current_user.name, edit_user_path(current_user) %>
-  </div>
-  <div class="create-operation">
-    <%= link_to '運行便を作成する', new_operation_path %>
+    <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: 'btn' %>
   </div>
 </div>
 
 <div class="side-bar-footer">
+  <div class="create-operation">
+    <%= link_to '運行便を作成する', new_operation_path, class: "btn btn-primary" %>
+  </div>
+  <div class="link-to-operations">
+    <%= link_to "運行情報一覧", operations_path, class: "btn btn-success btn-sm" %>
+  </div>
 </div>

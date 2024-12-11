@@ -4,9 +4,11 @@
   </div>
 
   <div class="calendar-navigation">
-    <%= link_to "前の週", calendars_path(start_date: @start_date - 7.days), class: "btn btn-primary" %>
+    <div class="navigation-links">
+    <%= link_to "先週", calendars_path(start_date: @start_date - 7.days), class: "btn btn-primary" %>
     <%= link_to "今週", calendars_path(start_date: Date.today.beginning_of_week), class: "btn btn-secondary" %>
-    <%= link_to "次の週", calendars_path(start_date: @start_date + 7.days), class: "btn btn-primary" %>
+    <%= link_to "来週", calendars_path(start_date: @start_date + 7.days), class: "btn btn-primary" %>
+    </div>
   </div>
 
   <div class="calendar">

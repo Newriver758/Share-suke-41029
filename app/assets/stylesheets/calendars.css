@@ -22,17 +22,25 @@
   text-decoration: none;
 }
 
-.create-operation a {
-  font-size: 10px;
-  border: 1px solid lightblue;
-  padding: 14px;
-  color: deepskyblue;
-  text-decoration: none;
-}
-
 .side-bar-footer {
   background-color: #2F3E51;
   height: calc(100vh - 100px);
+  display: block;              /* ブロック表示で中央揃え */
+  width: 100%;                 /* ボタンをサイドバーの幅いっぱいに広げる */
+  padding: 10px 0;             /* 上下の余白を調整 */
+  text-align: center;          /* テキストを中央揃え */
+  text-decoration: none;       /* 下線を削除 */
+  color: #fff;                 /* テキスト色 (白色) */
+  border: none;                /* ボーダーを削除 */
+  border-radius: 5px;          /* 角丸 */
+  font-size: 16px;             /* フォントサイズ */
+  font-weight: bold;           /* 太字 */
+  margin-bottom: 10px;         /* ボタン間のスペース */
+  cursor: pointer;
+}
+
+.sidebar-content .custom-btn:hover {
+  background-color: #0056b3;   /* ホバー時の背景色 (濃い青色) */
 }
 
 .calendar {

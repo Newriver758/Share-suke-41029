@@ -26,3 +26,18 @@ th.saturday {
 th.sunday {
   color: red;
 }
+
+.calendar-navigation {
+  margin-bottom: 20px;
+}
+
+.navigation-links {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.navigation-links .btn {
+  font-size: 13px;
+  padding: 8px 15px;
+}
