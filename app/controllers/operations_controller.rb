@@ -32,8 +32,8 @@ class OperationsController < ApplicationController
   end
 
   def destroy
-    operation.destroy
-    redirect_to operations_path
+    @operation.destroy
+    redirect_to calendars_path(start_date: @operation.date.beginning_of_week), notice: '運行情報を削除しました。'
   end
 
   private
