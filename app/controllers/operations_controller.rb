@@ -1,4 +1,5 @@
 class OperationsController < ApplicationController
+  before_action :set_item, only: %i[show edit update destroy]
   def new
     @operation = Operation.new
   end
@@ -17,15 +18,12 @@ class OperationsController < ApplicationController
   end
 
   def show
-    @operation = Operation.find(params[:id])
   end
 
   def edit
-    @operation = Operation.find(params[:id])
   end
 
   def update
-    @operation = Operation.find(params[:id])
     if @operation.update(operation_params)
       redirect_to @operation, notice: '運行情報を更新しました。'
     else
@@ -33,7 +31,16 @@ class OperationsController < ApplicationController
     end
   end
 
+  def destroy
+    operation.destroy
+    redirect_to operations_path
+  end
+
   private
+
+  def set_item
+    @operation = Operation.find(params[:id])
+  end
 
   def operation_params
     params.require(:operation).permit(:operation_info, :day_or_night_id, :work_content_id, :date, :user_id)
