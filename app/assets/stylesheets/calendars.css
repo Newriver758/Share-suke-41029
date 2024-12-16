@@ -45,7 +45,7 @@
   color: #253141;                 /* テキスト色 (白色) */
   border: none;                /* ボーダーを削除 */
   border-radius: 5px;          /* 角丸 */
-  font-size: 16px;             /* フォントサイズ */
+  font-size: 20px;             /* フォントサイズ */
   font-weight: bold;           /* 太字 */
   margin-bottom: 10px;         /* ボタン間のスペース */
   cursor: pointer;
