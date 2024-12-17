@@ -1,6 +1,9 @@
 <h1>運行情報を投稿</h1>
 
 <%= form_with model: @operation, local: true do |f| %>
+
+<%= render 'shared/error_messages', model: f.object %>
+
   <div>
     <%= f.label :user_id, 'ユーザー' %>
     <%= f.collection_select :user_id, User.all, :id, :name, prompt: '選択してください' %>

@@ -9,6 +9,6 @@ class Operation < ApplicationRecord
   belongs_to :user
 
   # その他のバリデーションなど
-  validates :operation_info, :date, :day_or_night_id, :work_content_id, presence: true
-  validates :day_or_night_id, :work_content_id, numericality: { other_than: 0 }
+  validates :operation_info, :date, presence: true
+  validates :day_or_night_id, :work_content_id, numericality: { other_than: 0, message: 'を選択してください' }
 end

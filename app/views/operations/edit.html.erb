@@ -1,6 +1,9 @@
 <h1>運行情報編集</h1>
 
 <%= form_with(model: @operation, local: true) do |form| %>
+
+<%= render 'shared/error_messages', model: form.object %>
+
   <div class="form-group">
     <%= form.label :operation_info, "運行情報" %>
     <%= form.text_field :operation_info, class: "form-control" %>
