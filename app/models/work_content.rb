@@ -1,5 +1,6 @@
 class WorkContent < ActiveHash::Base
   self.data = [
+    { id: 0, name: '---' },
     { id: 1, name: '運行' },
     { id: 2, name: '代行' },
     { id: 3, name: '覚え' },
