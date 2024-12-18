@@ -27,7 +27,7 @@ class OperationsController < ApplicationController
     if @operation.update(operation_params)
       redirect_to @operation, notice: '運行情報を更新しました。'
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
