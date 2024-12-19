@@ -15,7 +15,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_11_28_215928) do
     t.string "operation_info", null: false
     t.integer "day_or_night_id", null: false
     t.integer "work_content_id", null: false
-    t.date "date", null: false
+    t.date "start_date", null: false
+    t.date "end_date", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

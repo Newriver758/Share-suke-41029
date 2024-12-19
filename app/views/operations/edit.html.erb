@@ -20,8 +20,13 @@
   </div>
 
   <div class="form-group">
-    <%= form.label :date, "日付" %>
-    <%= form.date_select :date, class: "form-control" %>
+    <%= form.label :start_date, "開始日" %>
+    <%= form.date_field :start_date, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :end_date, "終了日" %>
+    <%= form.date_field :end_date, class: "form-control" %>
   </div>
 
   <%= form.submit "更新", class: "btn btn-success" %>

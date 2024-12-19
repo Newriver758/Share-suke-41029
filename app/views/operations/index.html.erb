@@ -14,7 +14,9 @@
     <% @operations.each do |operation| %>
       <tr>
         <td><%= operation.user.name %></td>
-        <td><%= operation.date %></td>
+        <td>
+          <%= operation.start_date %> ～ <%= operation.end_date %>
+        </td>
         <td>
           <%= link_to operation.operation_info, operation_path(operation), class: 'text-primary' %>
         </td>

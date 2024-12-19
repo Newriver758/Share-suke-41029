@@ -7,14 +7,14 @@ class OperationsController < ApplicationController
   def create
     @operation = Operation.new(operation_params)
     if @operation.save
-      redirect_to calendars_path(start_date: @operation.date.beginning_of_week), notice: '運行情報が投稿されました。'
+      redirect_to calendars_path(start_date: @operation.start_date.beginning_of_week), notice: '運行情報が投稿されました。'
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def index
-    @operations = Operation.includes(:user).order(:date)
+    @operations = Operation.includes(:user).order(:start_date)
   end
 
   def show
@@ -33,7 +33,7 @@ class OperationsController < ApplicationController
 
   def destroy
     @operation.destroy
-    redirect_to calendars_path(start_date: @operation.date.beginning_of_week), notice: '運行情報を削除しました。'
+    redirect_to calendars_path(start_date: @operation.start_date.beginning_of_week), notice: '運行情報を削除しました。'
   end
 
   private
@@ -43,6 +43,7 @@ class OperationsController < ApplicationController
   end
 
   def operation_params
-    params.require(:operation).permit(:operation_info, :day_or_night_id, :work_content_id, :date, :user_id)
+    params.require(:operation).permit(:operation_info, :start_date, :end_date, :day_or_night_id, :work_content_id,
+                                      :user_id)
   end
 end
