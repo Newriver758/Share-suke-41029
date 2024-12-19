@@ -6,7 +6,7 @@
   <p>昼/夜: <%= @operation.day_or_night.name %></p>
   <p>業務内容: <%= @operation.work_content.name %></p>
 
-  <%= link_to 'カレンダーに戻る', calendars_path(start_date: @operation.date.beginning_of_week), class: 'btn btn-secondary' %>
+  <%= link_to 'カレンダーに戻る', calendars_path(start_date: @operation.start_date.beginning_of_week), class: 'btn btn-secondary' %>
   <%= link_to "編集", edit_operation_path(@operation), class: "btn btn-primary" %>
   <%= link_to '削除', operation_path(@operation), data: { turbo_method: :delete, turbo_confirm: '本当に削除しますか？' }, class: 'btn btn-danger' %>
 </div>
