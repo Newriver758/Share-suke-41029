@@ -10,15 +10,15 @@
     </tr>
   </thead>
   <tbody>
-    <% User.all.each do |user| %>
+    <% @users.each do |user| %>
       <tr>
         <td>
           <%= user.name %>
           
         </td>
-        <% (start_date..end_date).each do |date| %>
+        <% (@start_date..@end_date).each do |date| %>
           <td>
-            <% operation = @operations.find { |op| op.user_id == user.id && (op.start_date..op.end_date).cover?(date) } %>
+            <% operation = user.operations.find { |op| (op.start_date..op.end_date).cover?(date) } %>
             <% if operation %>
               <p><%= link_to operation.operation_info, operation_path(operation), class: "text-info" %></p>
               <p><%= operation.day_or_night.name %></p>

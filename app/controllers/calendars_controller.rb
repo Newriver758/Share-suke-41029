@@ -5,6 +5,7 @@ class CalendarsController < ApplicationController
 
     # 開始日から6日後を終了日に設定
     @end_date = @start_date + 6.days
+    @users = User.includes(:operations).all
 
     # 指定された期間内の運行情報を取得
     @operations = Operation.where('start_date <= ? AND end_date >= ?', @end_date, @start_date).includes(:user)

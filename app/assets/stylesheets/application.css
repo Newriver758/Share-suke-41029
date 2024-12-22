@@ -12,19 +12,20 @@
  *
  *= require_tree .
  *= require_self
- */
  *= require simple_calendar
+ */
+ 
 
  * {
   box-sizing: border-box;
 }
 
 th.saturday {
-  color: blue;
+  color: #0056b3;
 }
 
 th.sunday {
-  color: red;
+  color: #8b0000;
 }
 
 .calendar-navigation {
@@ -34,10 +35,24 @@ th.sunday {
 .navigation-links {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 15px;
 }
 
 .navigation-links .btn {
-  font-size: 13px;
-  padding: 8px 15px;
+  font-size: 14px;
+  padding: 10px 20px;
+  background-color: #8b0000; /* ボタン背景色 */
+  color: #fff; /* ボタン文字色 */
+  border-radius: 5px; /* 角丸 */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.navigation-links .btn:hover {
+  background-color: #a83232; /* ホバー時の背景色 */
+}
+
+.navigation-links .btn:active {
+  background-color: #6b0000; /* クリック時の背景色 */
 }

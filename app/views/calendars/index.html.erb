@@ -1,6 +1,6 @@
 <div class="wrapper">
   <div class="side-bar">
-    <%= render "side_bar" %>
+    <%= render "shared/side_bar" %>
   </div>
 
   <div class="calendar-navigation">
@@ -12,6 +12,6 @@
   </div>
 
   <div class="calendar">
-    <%= render "main_calendar", start_date: @start_date, end_date: @end_date %>
+    <%= render "shared/main_calendar", start_date: @start_date, end_date: @end_date %>
   </div>
 </div>
