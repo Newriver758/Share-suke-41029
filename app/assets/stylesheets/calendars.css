@@ -1,5 +1,6 @@
 .wrapper {
   display: flex;
+  overflow: hidden; /* はみ出し防止 */
 }
 .side-bar {
   width: 250px;
@@ -9,11 +10,9 @@
 /* サイドバーのタイトル部分のデザイン */
 .side-bar-header {
   height: 100px;
-  padding: 0 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  background-color: #00008b; /* 和風の淡い背景色 */
   padding: 15px;
   border-bottom: 1px solid #ddd;
   text-align: center;
@@ -39,7 +38,6 @@
 }
 
 .btn {
-  display: block;
   padding: 10px 15px;
   background-color: #8b0000;
   color: #fff;
@@ -62,23 +60,4 @@
   padding: 15px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-}
-
-@media (max-width: 768px) {
-  .side-bar {
-    width: 180px;
-  }
-  .calendar {
-    width: calc(100vw - 180px);
-  }
-}
-
-@media (max-width: 576px) {
-  .side-bar {
-    width: 100%;
-    height: auto;
-  }
-  .calendar {
-    width: 100%;
-  }
 }
