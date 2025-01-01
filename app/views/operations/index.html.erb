@@ -27,4 +27,4 @@
   </tbody>
 </table>
 
-<%= link_to '戻る', calendars_path %>
+<%= link_to 'カレンダーに戻る', calendars_path(start_date: @operation.start_date.beginning_of_week), class: 'btn btn-secondary' %>

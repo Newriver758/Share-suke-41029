@@ -2,6 +2,7 @@ class OperationsController < ApplicationController
   before_action :set_item, only: %i[show edit update destroy]
   def new
     @operation = Operation.new
+    @operation.start_date ||= Date.today # デフォルト値を今日の日付に設定
   end
 
   def create
@@ -15,6 +16,7 @@ class OperationsController < ApplicationController
 
   def index
     @operations = Operation.includes(:user).order(:start_date)
+    @operation = @operations.first || Operation.new(start_date: Date.today) # 既存の最初のレコードを使用、なければ初期化
   end
 
   def show
