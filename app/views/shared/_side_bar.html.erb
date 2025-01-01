@@ -4,12 +4,18 @@
     <p class="app-name">シェア助</p>
 
     <!-- ユーザー名とログアウトボタン -->
-    <div class="header-name">
+    <div class="user-info">
       <% if user_signed_in? %>
-        <%= link_to current_user.name, edit_user_path(current_user) %>
-        <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: 'btn' %>
+        <div class="user-name">
+          <%= link_to current_user.name, edit_user_path(current_user), class: "user-link" %>
+        </div>
+        <div class="logout-btn">
+          <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: 'btn btn-danger' %>
+        </div>
       <% else %>
-        <%= link_to "ログイン", new_user_session_path, class: 'btn' %>
+        <div class="login-btn">
+          <%= link_to "ログイン", new_user_session_path, class: 'btn btn-primary' %>
+        </div>
       <% end %>
     </div>
   </div>

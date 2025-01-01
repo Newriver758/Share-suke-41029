@@ -20,15 +20,37 @@
 
 .app-name {
   font-family: 'Noto Serif JP', serif; /* 和風フォント */
-  font-size: 15px;
+  font-size: 24px;
+  font-weight: bold; /* 太字にする */
   color: #FFFFFF; /* 白い文字 */
-  margin: 0; /* pタグ特有の余白を消す */
+  margin: 15px;
 }
 
-.header-name {
-  font-size: 14px;
+.user-info {
+  display: flex;
+  flex-direction: column; /* 子要素を上下に並べる */
+  align-items: center; /* 水平方向で中央揃え */
+  margin-top: 10px;
+}
+
+.user-name {
+  margin-bottom: 10px; /* 名前とボタンの間に余白を追加 */
+  font-size: 20px;
   color: #FFFFFF;
-  text-decoration: none;
+}
+
+.logout-btn .btn {
+  font-size: 14px;
+  padding: 8px 12px;
+  background-color: #d9534f; /* 赤系の背景色 */
+  color: #FFFFFF;
+  text-align: center;
+  border: none;
+  border-radius: 4px;
+}
+
+.logout-btn .btn:hover {
+  background-color: #c9302c; /* ホバー時の色 */
 }
 
 .side-bar-footer {
@@ -37,6 +59,7 @@
 }
 
 .create-operation {
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 
