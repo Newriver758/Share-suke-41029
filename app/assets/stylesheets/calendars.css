@@ -4,7 +4,7 @@
 }
 .side-bar {
   width: 250px;
-  height: 100vh;
+  background-color: #2F3E51;
 }
 
 /* サイドバーのタイトル部分のデザイン */
@@ -18,9 +18,9 @@
   text-align: center;
 }
 
-.side-bar-header p {
+.app-name {
   font-family: 'Noto Serif JP', serif; /* 和風フォント */
-  font-size: 50px;
+  font-size: 15px;
   color: #FFFFFF; /* 白い文字 */
   margin: 0; /* pタグ特有の余白を消す */
 }
@@ -32,9 +32,16 @@
 }
 
 .side-bar-footer {
-  background-color: #2F3E51;
   padding: 10px 0;
   text-align: center;
+}
+
+.create-operation {
+  margin-bottom: 20px;
+}
+
+.link-to-operations {
+  margin-bottom: 20px;
 }
 
 .btn {

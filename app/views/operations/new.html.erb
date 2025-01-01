@@ -1,4 +1,4 @@
-<h1>運行情報を投稿</h1>
+<h1>運行情報を作成</h1>
 
 <%= form_with model: @operation, local: true do |f| %>
 
@@ -34,7 +34,7 @@
     <%= f.collection_select :work_content_id, WorkContent.all, :id, :name, prompt: '選択してください' %>
   </div>
 
-  <%= f.submit '投稿' %>
+  <%= f.submit '作成' %>
 <% end %>
 
 <%= link_to '戻る', calendars_path %>

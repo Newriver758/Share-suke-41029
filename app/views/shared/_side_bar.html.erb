@@ -1,23 +1,25 @@
-<div class="side-bar-header">
-  <!-- アプリ名 -->
-  <p>シェア助</p>
+<div class="side-bar">
+  <div class="side-bar-header">
+    <!-- アプリ名 -->
+    <p class="app-name">シェア助</p>
 
-  <!-- ユーザー名とログアウトボタン -->
-  <div class="header-name">
-    <% if user_signed_in? %>
-      <%= link_to current_user.name, edit_user_path(current_user) %>
-      <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: 'btn' %>
-    <% else %>
-      <%= link_to "ログイン", new_user_session_path, class: 'btn' %>
-    <% end %>
+    <!-- ユーザー名とログアウトボタン -->
+    <div class="header-name">
+      <% if user_signed_in? %>
+        <%= link_to current_user.name, edit_user_path(current_user) %>
+        <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: 'btn' %>
+      <% else %>
+        <%= link_to "ログイン", new_user_session_path, class: 'btn' %>
+      <% end %>
+    </div>
   </div>
-</div>
 
-<div class="side-bar-footer">
-  <div class="create-operation">
-    <%= link_to '運行便を作成する', new_operation_path, class: "btn btn-primary" %>
-  </div>
-  <div class="link-to-operations">
-    <%= link_to "運行情報一覧", operations_path, class: "btn btn-success btn-sm" %>
+  <div class="side-bar-footer">
+    <div class="create-operation">
+      <%= link_to '運行便を作成する', new_operation_path, class: "btn btn-primary" %>
+    </div>
+    <div class="link-to-operations">
+      <%= link_to "運行情報一覧", operations_path, class: "btn btn-success btn-sm" %>
+    </div>
   </div>
 </div>
