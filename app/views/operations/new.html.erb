@@ -34,7 +34,7 @@
     <%= f.collection_select :work_content_id, WorkContent.all, :id, :name, prompt: '選択してください' %>
   </div>
 
-  <%= f.submit '作成' %>
+  <%= f.submit '作成', class: "btn btn-create" %>
 <% end %>
 
 <%= link_to 'カレンダーに戻る', calendars_path(start_date: @operation.start_date.beginning_of_week), class: 'btn btn-secondary' %>

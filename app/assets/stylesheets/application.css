@@ -21,11 +21,22 @@
 }
 
 th.saturday {
-  color: #0056b3;
+  background-color: blue; /* 青い背景 */
+  color: #000;
 }
 
 th.sunday {
-  color: #8b0000;
+  background-color: red; /* 赤い背景 */
+  color: #000;
+}
+
+.text-info {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.text-info:hover {
+  text-decoration: underline;
 }
 
 .calendar-navigation {
