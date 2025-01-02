@@ -19,9 +19,11 @@
           <td>
             <% operation = user.operations.find { |op| (op.start_date..op.end_date).cover?(date) } %>
             <% if operation %>
-              <p><%= link_to operation.operation_info, operation_path(operation), class: "text-info" %></p>
-              <p><%= operation.day_or_night.name %></p>
-              <p><%= operation.work_content.name %></p>
+              <div class="operation-cell <%= operation.category_name.downcase %>">
+                <p><%= link_to operation.operation_info, operation_path(operation), class: "text-info" %></p>
+                <p><%= operation.day_or_night.name %></p>
+                <p><%= operation.work_content.name %></p>
+              </div>
             <% else %>
               <p>休み</p>
             <% end %>

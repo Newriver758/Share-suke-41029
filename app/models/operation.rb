@@ -14,6 +14,22 @@ class Operation < ApplicationRecord
   validate :start_date_before_end_date
   validate :validate_date_overlap, on: :create
 
+  # カテゴリ名を返すメソッド
+  def category_name
+    case work_content.name
+    when '運行'
+      'unko'
+    when '代行'
+      'daiko'
+    when '覚え'
+      'obo'
+    when '指導'
+      'shido'
+    else
+      'default'
+    end
+  end
+
   private
 
   def start_date_before_end_date

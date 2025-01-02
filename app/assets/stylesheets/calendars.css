@@ -91,3 +91,32 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
 }
+
+/* 基本スタイル */
+.operation-cell {
+  padding: 8px;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+}
+
+/* 運行 */
+.operation-cell.unko {
+  background-color: #4caf50; /* 緑 */
+}
+
+/* 代行 */
+.operation-cell.daiko {
+  background-color: #2196f3; /* 青 */
+}
+
+/* 覚え */
+.operation-cell.obo {
+  background-color: #ffeb3b; /* 黄 */
+  color: #000; /* テキスト黒 */
+}
+
+/* 指導 */
+.operation-cell.shido {
+  background-color: #ff5722; /* 赤 */
+}
