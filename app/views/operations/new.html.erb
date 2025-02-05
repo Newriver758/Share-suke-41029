@@ -34,6 +34,11 @@
     <%= f.collection_select :work_content_id, WorkContent.all, :id, :name, prompt: '選択してください' %>
   </div>
 
+  <div>
+  <%= f.label :memo, 'メモ' %>
+  <%= f.text_area :memo, class: 'form-control', rows: 3, placeholder: '自由にメモを記入してください' %>
+  </div>
+
   <%= f.submit '作成', class: "btn btn-create" %>
 <% end %>
 

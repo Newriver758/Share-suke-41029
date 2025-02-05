@@ -8,6 +8,7 @@
       <th>運行情報</th>
       <th>昼/夜</th>
       <th>業務内容</th>
+      <th>メモ</th>
     </tr>
   </thead>
   <tbody>
@@ -22,6 +23,7 @@
         </td>
         <td><%= operation.day_or_night.name %></td>
         <td><%= operation.work_content.name %></td>
+        <td><%= operation.memo %><td>
       </tr>
     <% end %>
   </tbody>

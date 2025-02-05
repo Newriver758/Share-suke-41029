@@ -46,6 +46,6 @@ class OperationsController < ApplicationController
 
   def operation_params
     params.require(:operation).permit(:operation_info, :start_date, :end_date, :day_or_night_id, :work_content_id,
-                                      :user_id)
+                                      :user_id, :memo)
   end
 end

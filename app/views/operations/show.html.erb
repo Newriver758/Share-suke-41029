@@ -5,6 +5,7 @@
   <p>運行情報: <%= @operation.operation_info %></p>
   <p>昼/夜: <%= @operation.day_or_night.name %></p>
   <p>業務内容: <%= @operation.work_content.name %></p>
+  <p>メモ: <%= @operation.memo %></p>
 
   <%= link_to 'カレンダーに戻る', calendars_path(start_date: @operation.start_date.beginning_of_week), class: 'btn btn-secondary' %>
   <%= link_to "編集", edit_operation_path(@operation), class: "btn btn-primary" %>

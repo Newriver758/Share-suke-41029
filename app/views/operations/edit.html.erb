@@ -1,35 +1,45 @@
-<h1>運行情報編集</h1>
+<h1>運行情報を編集</h1>
 
-<%= form_with(model: @operation, local: true) do |form| %>
+<%= form_with model: @operation, local: true do |f| %>
 
-<%= render 'shared/error_messages', model: form.object %>
+  <%= render 'shared/error_messages', model: f.object %>
 
-  <div class="form-group">
-    <%= form.label :operation_info, "運行情報" %>
-    <%= form.text_field :operation_info, class: "form-control" %>
+  <div>
+    <%= f.label :user_id, 'ユーザー' %>
+    <%= f.collection_select :user_id, User.all, :id, :name, prompt: '選択してください' %>
   </div>
 
-  <div class="form-group">
-    <%= form.label :day_or_night_id, "昼/夜" %>
-    <%= form.select :day_or_night_id, DayOrNight.all.collect { |d| [d.name, d.id] }, class: "form-control" %>
+  <div>
+    <%= f.label :start_date, '開始日' %>
+    <%= f.date_field :start_date, class: 'form-control' %>
   </div>
 
-  <div class="form-group">
-    <%= form.label :work_content_id, "業務内容" %>
-    <%= form.select :work_content_id, WorkContent.all.collect { |w| [w.name, w.id] }, class: "form-control" %>
+  <div>
+    <%= f.label :end_date, '終了日' %>
+    <%= f.date_field :end_date, class: 'form-control' %>
   </div>
 
-  <div class="form-group">
-    <%= form.label :start_date, "開始日" %>
-    <%= form.date_field :start_date, class: "form-control" %>
+  <div>
+    <%= f.label :operation_info, '運行情報' %>
+    <%= f.text_field :operation_info %>
   </div>
 
-  <div class="form-group">
-    <%= form.label :end_date, "終了日" %>
-    <%= form.date_field :end_date, class: "form-control" %>
+  <div>
+    <%= f.label :day_or_night_id, '昼/夜' %>
+    <%= f.collection_select :day_or_night_id, DayOrNight.all, :id, :name, prompt: '選択してください' %>
   </div>
 
-  <%= form.submit "更新", class: "btn btn-success" %>
+  <div>
+    <%= f.label :work_content_id, '業務内容' %>
+    <%= f.collection_select :work_content_id, WorkContent.all, :id, :name, prompt: '選択してください' %>
+  </div>
+
+  <div>
+    <%= f.label :memo, 'メモ' %>
+    <%= f.text_area :memo, class: 'form-control', rows: 3, placeholder: '自由にメモを記入してください' %>
+  </div>
+
+  <%= f.submit '更新', class: "btn btn-update" %>
 <% end %>
 
 <%= link_to "キャンセル", operation_path(@operation), class: "btn btn-secondary" %>

@@ -22,7 +22,7 @@ class Operation < ApplicationRecord
     when '代行'
       'daiko'
     when '覚え'
-      'obo'
+      'oboe'
     when '指導'
       'shido'
     else

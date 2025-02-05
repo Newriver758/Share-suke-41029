@@ -18,6 +18,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_11_28_215928) do
     t.date "start_date", null: false
     t.date "end_date", null: false
     t.bigint "user_id", null: false
+    t.text "memo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_operations_on_user_id"

@@ -17,6 +17,9 @@ class CreateOperations < ActiveRecord::Migration[7.0]
       # ユーザーID
       t.references :user, null: false, foreign_key: true
 
+      # メモ
+      t.text :memo
+
       t.timestamps
     end
   end
