@@ -1,5 +1,6 @@
 class OperationsController < ApplicationController
-  before_action :set_item, only: %i[show edit update destroy]
+  before_action :set_user, only: [:index] # indexアクションで@userをセット
+  before_action :set_operation, only: %i[show edit update destroy]
   def new
     @operation = Operation.new
     @operation.start_date ||= Date.today # デフォルト値を今日の日付に設定
@@ -15,8 +16,14 @@ class OperationsController < ApplicationController
   end
 
   def index
-    @operations = Operation.includes(:user).order(:start_date)
-    @operation = @operations.first || Operation.new(start_date: Date.today) # 既存の最初のレコードを使用、なければ初期化
+    if params[:user_id] # `/users/:user_id/operations` の場合
+      @user = User.find_by(id: params[:user_id])
+      @operations = @user&.operations&.order(start_date: :desc) || []
+    else
+      @operations = Operation.includes(:user).order(:start_date)
+    end
+
+    @operation = @operations.first || Operation.new(start_date: Date.today)
   end
 
   def show
@@ -40,8 +47,12 @@ class OperationsController < ApplicationController
 
   private
 
-  def set_item
+  def set_operation
     @operation = Operation.find(params[:id])
+  end
+
+  def set_user
+    @user = User.find_by(id: params[:user_id]) if params[:user_id].present?
   end
 
   def operation_params

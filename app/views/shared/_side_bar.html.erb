@@ -27,5 +27,8 @@
     <div class="link-to-operations">
       <%= link_to "運行情報一覧", operations_path, class: "btn btn-success btn-sm" %>
     </div>
+    <div class="link-to-user-operation">
+      <%= link_to 'ユーザー情報一覧', user_path(current_user), class: "btn btn-primary" %>
+    </div>
   </div>
 </div>

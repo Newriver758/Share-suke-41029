@@ -1,0 +1,15 @@
+<h1>ユーザー一覧</h1>
+
+<ul>
+  <% @users.each do |user| %>
+    <li>
+      <%= link_to "#{user.name} の勤務一覧", user_operations_path(user) %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'カレンダーに戻る', calendars_path(start_date: @operation.start_date.beginning_of_week), class: 'btn btn-secondary' %>
+
+<div class="footer-text">
+  <p>Copyright(C) Share-suke ALL RIGHTS RESERVED.</p>
+</div>
