@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @operation = @user.operations.order(start_date: :asc).first # 最も早い運行データを取得
   end
 
   def update
