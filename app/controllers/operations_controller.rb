@@ -16,14 +16,13 @@ class OperationsController < ApplicationController
   end
 
   def index
-    if params[:user_id] # `/users/:user_id/operations` の場合
-      @user = User.find_by(id: params[:user_id])
-      @operations = @user&.operations&.order(start_date: :desc) || []
-    else
-      @operations = Operation.includes(:user).order(:start_date)
-    end
+    @operations = if params[:user_id].present?
+                    Operation.where(user_id: params[:user_id]).order(:start_date)
+                  else
+                    Operation.all.order(:start_date)
+                  end
 
-    @operation = @operations.first || Operation.new(start_date: Date.today)
+    @operation = @operations.first # ここで最初のデータを取得
   end
 
   def show

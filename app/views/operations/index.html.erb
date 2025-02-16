@@ -3,13 +3,10 @@
 <!-- 全ユーザーの一覧を表示 -->
 <div class="user-list">
   <h2>ユーザー別運行情報</h2>
-  <ul>
-    <% User.all.each do |user| %>
-      <li>
-        <%= link_to user.name, user_operations_path(user), class: "btn btn-outline-primary" %>
-      </li>
-    <% end %>
-  </ul>
+  <%= form_with url: operations_path, method: :get, local: true do %>
+    <%= select_tag :user_id, options_from_collection_for_select(User.all, :id, :name), include_blank: "全てのユーザー" %>
+    <%= submit_tag "検索", class: "btn btn-primary" %>
+  <% end %>
 </div>
 
 <!-- 運行情報テーブル -->
@@ -40,8 +37,10 @@
   </tbody>
 </table>
 
-<% if @operation.present? %>
+<% if @operation && @operation.start_date.present? %>
   <%= link_to 'カレンダーに戻る', calendars_path(start_date: @operation.start_date.beginning_of_week), class: 'btn btn-secondary' %>
+<% else %>
+  <p>運行情報がありません。</p>
 <% end %>
 
 <div class="footer-text">
