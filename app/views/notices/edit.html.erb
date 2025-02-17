@@ -1,0 +1,11 @@
+<h1>投稿を編集</h1>
+
+<%= form_with model: @notice, local: true do |f| %>
+  <div class="form-group">
+    <%= f.text_area :content, class: "form-control" %>
+  </div>
+  <%= f.submit "更新", class: "btn btn-primary mt-2" %>
+<% end %>
+
+<!-- キャンセルボタン -->
+<%= link_to "キャンセル", notices_path, class: "btn btn-secondary mt-2" %>

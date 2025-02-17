@@ -17,6 +17,14 @@
       <p><strong><%= notice.user.name %></strong></p>
       <p><%= notice.content %></p>
       <small><%= notice.created_at.strftime("%Y-%m-%d %H:%M") %></small>
+
+      <!-- ログインユーザーが投稿者なら編集・削除ボタンを表示 -->
+      <% if notice.user == current_user %>
+        <div class="actions mt-2">
+          <%= link_to "編集", edit_notice_path(notice), class: "btn btn-sm btn-warning" %>
+          <%= link_to "削除", notice, method: :delete, data: { turbo_method: :delete, turbo_confirm: '本当に削除しますか？' }, class: "btn btn-sm btn-danger" %>
+        </div>
+      <% end %>
     </div>
     <hr>
   <% end %>

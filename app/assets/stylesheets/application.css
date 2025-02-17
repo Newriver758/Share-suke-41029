@@ -19,3 +19,8 @@
  * {
   box-sizing: border-box;
 }
+
+.notice .actions {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

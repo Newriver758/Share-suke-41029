@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :operations, only: [:index] # ユーザーごとの勤務一覧
   end
 
-  resources :notices, only: %i[index create]
+  resources :notices, only: %i[index create edit update destroy]
   resources :calendars, only: [:index]
   resources :operations
 end
