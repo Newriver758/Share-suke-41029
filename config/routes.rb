@@ -9,5 +9,10 @@ Rails.application.routes.draw do
 
   resources :notices, only: %i[index create edit update destroy]
   resources :calendars, only: [:index]
-  resources :operations
+  resources :operations do
+    member do
+      patch :check_in   # 出勤
+      patch :check_out  # 退勤
+    end
+  end
 end
