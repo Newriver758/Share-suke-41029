@@ -38,7 +38,7 @@
 </table>
 
 <% if @operation && @operation.start_date.present? %>
-  <%= link_to 'カレンダーに戻る', calendars_path(start_date: @operation.start_date.beginning_of_week), class: 'btn btn-secondary' %>
+  <%= link_to 'カレンダーに戻る', calendars_path, class: 'btn btn-secondary' %>
 <% else %>
   <p>運行情報がありません。</p>
 <% end %>
