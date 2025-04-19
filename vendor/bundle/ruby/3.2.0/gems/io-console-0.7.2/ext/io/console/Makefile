@@ -15,7 +15,7 @@ NULLCMD = :
 srcdir = .
 topdir = /Users/toshihiroshinkawa/.rbenv/versions/3.2.0/include/ruby-3.2.0
 hdrdir = $(topdir)
-arch_hdrdir = /Users/toshihiroshinkawa/.rbenv/versions/3.2.0/include/ruby-3.2.0/x86_64-darwin23
+arch_hdrdir = /Users/toshihiroshinkawa/.rbenv/versions/3.2.0/include/ruby-3.2.0/x86_64-darwin24
 PATH_SEPARATOR = :
 VPATH = $(srcdir):$(arch_hdrdir)/ruby:$(hdrdir)/ruby
 prefix = $(DESTDIR)/Users/toshihiroshinkawa/.rbenv/versions/3.2.0
@@ -106,7 +106,7 @@ RUBY_VERSION_NAME = $(RUBY_BASE_NAME)-$(ruby_version)
 RUBYW_BASE_NAME = rubyw
 RUBY_BASE_NAME = ruby
 
-arch = x86_64-darwin23
+arch = x86_64-darwin24
 sitearch = $(arch)
 ruby_version = 3.2.0
 ruby = $(bindir)/$(RUBY_BASE_NAME)
