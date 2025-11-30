@@ -4,13 +4,16 @@ class Operation < ApplicationRecord
   # ActiveHashとの関連付け
   belongs_to_active_hash :day_or_night
   belongs_to_active_hash :work_content
+  belongs_to_active_hash :start_time
+  belongs_to_active_hash :end_time
 
   # ユーザーとの関連付け
   belongs_to :user
 
   # その他のバリデーションなど
   validates :operation_info,  :start_date, :end_date, presence: true
-  validates :day_or_night_id, :work_content_id, numericality: { other_than: 0, message: 'を選択してください' }
+  validates :day_or_night_id, :work_content_id, :start_time_id, :end_time_id,
+            numericality: { other_than: 0, message: 'を選択してください' }
   validate :start_date_before_end_date
   validate :validate_date_overlap, on: :create
 

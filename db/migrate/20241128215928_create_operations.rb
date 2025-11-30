@@ -20,6 +20,10 @@ class CreateOperations < ActiveRecord::Migration[7.0]
       # メモ
       t.text :memo
 
+      # 時間
+      t.integer :start_time_id
+      t.integer :end_time_id
+
       t.timestamps
     end
   end

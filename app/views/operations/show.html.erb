@@ -2,6 +2,8 @@
   <h1>運行情報詳細</h1>
   <p>ユーザー名: <%= @operation.user.name %></p>
   <p>日付: <%= @operation.start_date %> ～ <%= @operation.end_date %></p>
+  <p>開始時間: <%= @operation.start_time.name %></p>
+  <p>終了時間: <%= @operation.end_time.name %></p>
   <p>運行情報: <%= @operation.operation_info %></p>
   <p>昼/夜: <%= @operation.day_or_night.name %></p>
   <p>業務内容: <%= @operation.work_content.name %></p>

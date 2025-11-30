@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2025_02_18_110620) do
+ActiveRecord::Schema[7.0].define(version: 2025_11_30_120632) do
   create_table "attendances", charset: "utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.datetime "clock_in"
@@ -18,6 +18,11 @@ ActiveRecord::Schema[7.0].define(version: 2025_02_18_110620) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_attendances_on_user_id"
+  end
+
+  create_table "end_times", charset: "utf8", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "notices", charset: "utf8", force: :cascade do |t|
@@ -36,9 +41,21 @@ ActiveRecord::Schema[7.0].define(version: 2025_02_18_110620) do
     t.date "end_date", null: false
     t.bigint "user_id", null: false
     t.text "memo"
+    t.integer "start_time_id"
+    t.integer "end_time_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_operations_on_user_id"
+  end
+
+  create_table "start_times", charset: "utf8", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "time_slots", charset: "utf8", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", charset: "utf8", force: :cascade do |t|

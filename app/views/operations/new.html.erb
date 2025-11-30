@@ -20,6 +20,16 @@
   </div>
 
   <div>
+    <%= f.label :start_time_id, "開始時間" %>
+    <%= f.collection_select :start_time_id, TimeSlot.all, :id, :name, prompt: "選択してください" %>
+  </div>
+
+  <div>
+    <%= f.label :end_time_id, "終了時間" %>
+    <%= f.collection_select :end_time_id, TimeSlot.all, :id, :name, prompt: "選択してください" %>
+  </div>
+
+  <div>
     <%= f.label :operation_info, '運行情報' %>
     <%= f.text_field :operation_info %>
   </div>
